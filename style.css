@@ -1,0 +1,125 @@
+body{
+    margin: 0;
+    background-image: url(https://images.pexels.com/photos/632075/pexels-photo-632075.jpeg?cs=srgb&dl=pexels-damright-632075.jpg&fm=jpg);
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+.name{
+    cursor: pointer;
+}
+
+.card{
+    background-image: url(bgbg.jpg);
+    background-position: center;
+    background-size: contain;
+    height: 60%;
+    width: 60%;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    padding: 60px;
+}
+
+header{
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 40px 0px 40px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.navbar{
+    display: flex;
+    gap: 60px;
+    
+}
+
+.greet{
+    font-size: 60px;
+    font-family: 'Brush Script MT';
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: white;
+    transition: 0.5s;
+}
+
+.navbar a:hover{
+    text-decoration: underline;
+    transform: scale(1.2);
+}
+
+.icons span{
+    margin: 10px;
+}
+
+.icons span{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+button{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 5px 20px 5px 20px;
+    text-align: center;
+}
+
+.btn1{
+    background-color: rgb(137, 102, 82);
+    border: none;
+    transition: 0.5s;
+    margin: 20px;
+}
+
+.btn1:hover{
+    transform: scale(1.1);
+    background-color: transparent;
+    box-shadow: 0px 0px 6px black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn2{
+    background-color: transparent;
+    border: none;
+    transition: 0.5s;
+}
+
+.btn2:hover{
+    transform: scale(1.1);
+    background-color: rgb(137, 102, 82);
+    box-shadow: 0px 0px 6px black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px){
+    header{
+      flex-direction: column;
+      line-height: 45px;
+    }
+
+    .navbar{
+        gap: 10px;
+        font-size: 30px;
+    }
+}
