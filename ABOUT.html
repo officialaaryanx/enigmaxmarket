@@ -1,0 +1,339 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | ENIGMA</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #f9f7f5;
+      color: #5d4037;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      background-color: #f5f0eb;
+    }
+
+    .navbar h2 {
+      font-size: 26px;
+      letter-spacing: 2px;
+    }
+
+    .navbar nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #5d4037;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .navbar nav a:hover {
+      color: #8a6552;
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .icons i {
+      font-size: 18px;
+      color: #5d4037;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .icons i:hover {
+      color: #8a6552;
+      transform: scale(1.1);
+    }
+
+    /* Hero Section */
+    .hero {
+      background-color: #f5f0eb;
+      padding: 80px 60px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      color: #5d4037;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #8a6552;
+      font-size: 18px;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    /* About Story */
+    .about-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 80px 60px;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .about-section img {
+      flex: 1;
+      max-width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .about-content {
+      flex: 1;
+    }
+
+    .about-content h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      color: #5d4037;
+    }
+
+    .about-content p {
+      color: #8a6552;
+      margin-bottom: 15px;
+    }
+
+    /* Mission & Vision */
+    .mission-section {
+      background-color: #e8e0d8;
+      padding: 80px 60px;
+      text-align: center;
+    }
+
+    .mission-section h2 {
+      font-size: 30px;
+      color: #5d4037;
+      margin-bottom: 20px;
+    }
+
+    .mission-section p {
+      color: #8a6552;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .mission-cards {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: #f9f7f5;
+      padding: 25px;
+      border-radius: 8px;
+      width: 280px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+    }
+
+    .card i {
+      font-size: 28px;
+      color: #8a6552;
+      margin-bottom: 10px;
+    }
+
+    .card h4 {
+      color: #5d4037;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: #8a6552;
+      font-size: 15px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #f5f0eb;
+      display: flex;
+      justify-content: space-between;
+      padding: 40px 60px;
+      flex-wrap: wrap;
+      margin-top: 60px;
+    }
+
+    .footer-section {
+      max-width: 250px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 50px;
+    }
+
+    .footer-links div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #5d4037;
+      margin: 4px 0;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #8a6552;
+    }
+
+    .socials {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .socials i {
+      font-size: 22px;
+      color: #5d4037;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .socials i:hover {
+      color: #8a6552;
+      transform: scale(1.2);
+      text-shadow: 0px 0px 6px rgba(122, 91, 66, 0.5);
+    }
+
+    @media (max-width: 768px) {
+      .about-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-section img {
+        max-width: 100%;
+      }
+
+      .navbar {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <h2>BRAND NAME</h2>
+    <nav>
+      <a href="">Home</a>
+      <a href="3RD PAGE UP.HTML">Shop</a>
+      <a href="">Collections</a>
+      <a href="ABOUT.html">About</a>
+      <a href="">Contact</a>
+    </nav>
+    <div class="icons">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <i class="fa-regular fa-user"></i>
+      <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>About [BRAND]</h1>
+    <p>At [BRAND], we believe that elegance is timeless. Our mission is to bring sophistication, comfort, and craftsmanship together in every product we offer.</p>
+  </section>
+
+  <!-- About Story -->
+  <section class="about-section">
+    <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=800&q=80" alt="Our Story">
+    <div class="about-content">
+      <h2>Our Story</h2>
+      <p>Founded with a passion for quality and detail, ENIGMA started as a small boutique brand committed to redefining modern lifestyle essentials. Today, we continue to deliver premium collections that blend simplicity with elegance.</p>
+      <p>Every piece we create is a reflection of thoughtful design, sustainable materials, and our deep respect for artisanship. From concept to creation, we ensure every product meets our standard of excellence.</p>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="mission-section">
+    <h2>Our Values</h2>
+    <p>We are driven by principles that prioritize authenticity, craftsmanship, and sustainability — the pillars of our brand identity.</p>
+    <div class="mission-cards">
+      <div class="card">
+        <i class="fa-solid fa-leaf"></i>
+        <h4>Sustainability</h4>
+        <p>We ensure every product and process contributes to a better planet.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-heart"></i>
+        <h4>Quality Craft</h4>
+        <p>Each product is carefully designed and hand-finished with love.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-globe"></i>
+        <h4>Community</h4>
+        <p>We empower local artisans and promote ethical sourcing worldwide.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-section">
+      <h3>[BRAND]</h3>
+      <p>Crafting timeless pieces for your everyday elegance.</p>
+      <div class="socials">
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-facebook-f"></i>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h4>Shop</h4>
+        <a href="">All Products</a>
+        <a href="">New Arrivals</a>
+        <a href="">Gift Cards</a>
+        <a href="">Sale</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="">About Us</a>
+        <a href="">Our Story</a>
+        <a href="">Sustainability</a>
+        <a href="">Careers</a>
+      </div>
+      <div>
+        <h4>Customer Care</h4>
+        <a href="">Shipping</a>
+        <a href="">Returns</a>
+        <a href="">Privacy Policy</a>
+        <a href="">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
