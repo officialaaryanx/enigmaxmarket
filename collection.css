@@ -99,6 +99,11 @@ header{
     width: 100%;
 }
 
+.pimg img{
+    height: 100%;
+    width: 100%;
+}
+
 .pdetails{
     color: #8a6552;
     display: flex;
