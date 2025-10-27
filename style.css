@@ -101,7 +101,6 @@ button:hover{
     width: 100%;
     box-sizing: border-box;
     background-color: #f9f7f5;
-    border: 1px solid red;
 }
 
     /* Footer */
@@ -286,4 +285,5 @@ button:hover{
         height: 250vh;
     }
 }
+
 
