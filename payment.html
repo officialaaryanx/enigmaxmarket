@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Argenté | Payment</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: candara;
+    }
+
+    body {
+      margin: 0;
+      background-color: #f6f0ea;
+      color: #5a3e2b;
+    }
+
+    /* Navbar */
+    header {
+      font-size: 25px;
+      color: #8a6552;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #8a6552;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 60px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #8a6552;
+      transition: 0.5s;
+    }
+
+    .navbar a:hover {
+      transform: scale(1.1);
+      font-weight: bolder;
+    }
+
+    .icons i {
+      margin: 0px 10px 0px 10px;
+      transition: 0.3s;
+    }
+
+    .icons i:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    /* Payment Container */
+    .payment-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+    }
+
+    .payment-section {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #5d4037;
+      margin-bottom: 20px;
+    }
+
+    .payment-method {
+      margin-bottom: 30px;
+    }
+
+    .payment-option {
+      border: 1px solid #d7ccc0;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .payment-option:hover {
+      border-color: #8a6552;
+      background: #fff8f3;
+    }
+
+    .payment-option.selected {
+      border-color: #8a6552;
+      background: #fff8f3;
+    }
+
+    .payment-option img {
+      height: 30px;
+      object-fit: contain;
+    }
+
+    .card-details input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #d7ccc0;
+      border-radius: 4px;
+      font-size: 15px;
+    }
+
+    .card-row {
+      display: flex;
+      gap: 15px;
+    }
+
+    .card-row input {
+      flex: 1;
+    }
+
+    .place-order-btn {
+      background: #8a6552;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .place-order-btn:hover {
+      background: #7a5a48;
+      transform: scale(1.02);
+    }
+
+    .order-summary {
+      background: #f1e6dc;
+      padding: 20px;
+      border-radius: 6px;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      color: #7d6a58;
+    }
+
+    .total {
+      font-weight: bold;
+      color: #5d4037;
+      border-top: 1px solid #d7ccc0;
+      padding-top: 10px;
+      margin-top: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #f5f0eb;
+      display: flex;
+      justify-content: space-between;
+      padding: 40px 60px;
+      flex-wrap: wrap;
+      margin-top: 60px;
+    }
+
+    .footer-section {
+      max-width: 250px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 50px;
+    }
+
+    .footer-links div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #5d4037;
+      margin: 4px 0;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #8a6552;
+    }
+
+    .footer-section h3,
+    .footer-section p {
+      color: #5d4037;
+    }
+
+    .footer-links h4 {
+      color: #5d4037;
+    }
+
+    .socials {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .socials i {
+      font-size: 22px;
+      color: #5d4037;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .socials i:hover {
+      color: #8a6552;
+      transform: scale(1.2);
+      text-shadow: 0px 0px 6px rgba(122, 91, 66, 0.5);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .navbar {
+        margin-top: 15px;
+        gap: 30px;
+        font-size: 20px;
+      }
+
+      .payment-container {
+        padding: 20px;
+      }
+
+      .card-row {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .footer {
+        padding: 30px 20px;
+      }
+
+      .footer-links {
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .footer-section {
+        text-align: center;
+        margin-bottom: 20px;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar {
+        gap: 15px;
+        font-size: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .icons {
+        margin-top: 15px;
+      }
+
+      .payment-section {
+        padding: 20px;
+      }
+
+      .payment-option {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <div class="name"><b>Argenté</b></div>
+    <div class="navbar">
+      <a href="index.html">Home</a>
+      <a href="collection.html">Collection</a>
+      <a href="index.html#about-section">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="icons">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <a href="checkout.html"><i class="fa-solid fa-cart-shopping"></i></a>
+      <i class="fa-solid fa-user"></i>   
+    </div>
+  </header>
+
+  <main class="payment-container">
+    <div class="payment-section">
+      <h2>Payment Method</h2>
+      <div class="payment-method">
+        <div class="payment-option selected">
+          <input type="radio" name="payment" checked>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" alt="Mastercard">
+          <span>Credit / Debit Card</span>
+        </div>
+        <div class="payment-option">
+          <input type="radio" name="payment">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/1280px-PayPal.svg.png" alt="PayPal">
+          <span>PayPal</span>
+        </div>
+      </div>
+
+      <div class="card-details">
+        <input type="text" placeholder="Card Number">
+        <input type="text" placeholder="Cardholder Name">
+        <div class="card-row">
+          <input type="text" placeholder="Expiry Date (MM/YY)">
+          <input type="text" placeholder="CVV">
+        </div>
+      </div>
+    </div>
+
+    <div class="order-summary">
+      <h2>Order Summary</h2>
+      <div class="summary-item">
+        <span>Subtotal</span>
+        <span>$218.00</span>
+      </div>
+      <div class="summary-item">
+        <span>Shipping</span>
+        <span>$5.00</span>
+      </div>
+      <div class="summary-item">
+        <span>Tax</span>
+        <span>$15.00</span>
+      </div>
+      <div class="summary-item total">
+        <span>Total</span>
+        <span>$238.00</span>
+      </div>
+    </div>
+
+    <button class="place-order-btn">Place Order</button>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-section">
+      <h3>Argenté</h3>
+      <p>Crafting timeless pieces for your everyday elegance.</p>
+      <div class="socials">
+        <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h4>Shop</h4>
+        <a href="collection.html">All Products</a>
+        <a href="collection.html">New Arrivals</a>
+        <a href="collection.html">Gift Cards</a>
+        <a href="collection.html#sale">Sale</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="index.html#about-section">About Us</a>
+        <a href="index.html#about-section">Our Story</a>
+        <a href="index.html#about-section">Sustainability</a>
+        <a href="contact.html">Careers</a>
+      </div>
+      <div>
+        <h4>Customer Care</h4>
+        <a href="shipping.html">Shipping</a>
+        <a href="shipping.html">Returns</a>
+        <a href="index.html#about-section">Privacy Policy</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

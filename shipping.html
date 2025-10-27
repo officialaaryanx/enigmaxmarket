@@ -3,39 +3,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shipping Details</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
+      font-family: candara;
     }
 
     body {
-      background: linear-gradient(135deg, #f9f7f5, #f5f0eb);
-      color: #5d4037;
+      margin: 0;
+      background-color: #f6f0ea;
+      color: #5a3e2b;
     }
 
     /* Navbar */
-    .links {
-      background: #8a6552;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    header {
+      font-size: 25px;
+      color: #8a6552;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #8a6552;
     }
 
-    .links a {
-      color: #f5f0eb;
+    .navbar {
+      display: flex;
+      gap: 60px;
+    }
+
+    .navbar a {
       text-decoration: none;
-      margin: 0 20px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
+      color: #8a6552;
+      transition: 0.5s;
+    }
+
+    .navbar a:hover {
+      transform: scale(1.1);
+      font-weight: bolder;
+    }
+
+    .icons i {
+      margin: 0px 10px 0px 10px;
       transition: 0.3s;
     }
 
-    .links a:hover {
-      color: #f9f7f5;
-      text-decoration: underline;
+    .icons i:hover {
+      transform: scale(1.1);
+      cursor: pointer;
     }
 
     /* Page Title */
@@ -53,130 +72,392 @@
       margin-bottom: 30px;
     }
 
-    /* Shipping Form */
+    /* Page Layout */
     .shipping-container {
-      max-width: 700px;
-      margin: 0 auto;
-      background: #fffaf6;
-      padding: 30px 40px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 30px;
+      display: flex;
+      gap: 30px;
     }
 
-    .shipping-container form {
+    /* Main Form Section */
+    .shipping-section {
+      flex: 1;
+      background: white;
+      padding: 35px;
+      border-radius: 12px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+    }
+
+    .shipping-section h2 {
+      color: #5d4037;
+      margin-bottom: 25px;
+      font-size: 24px;
+      border-bottom: 2px solid #f0e6e0;
+      padding-bottom: 15px;
+    }
+
+    form {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 20px;
+    }
+
+    .form-row > div {
+      flex: 1;
     }
 
     label {
       font-weight: 600;
       color: #5d4037;
+      font-size: 15px;
+      display: block;
     }
 
     input, select, textarea {
-      padding: 10px;
-      border: 2px solid #c8a999;
+      width: 100%;
+      padding: 14px;
+      border: 1.5px solid #e0d3c4;
       border-radius: 6px;
       font-size: 15px;
-      background: #fdfaf8;
-      transition: 0.3s;
+      transition: all 0.3s ease;
+      background: #fffdfc;
       color: #5d4037;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #b4a397;
+    }
+
+    input:hover, select:hover, textarea:hover {
+      border-color: #c8b5a6;
+      background: #fff;
     }
 
     input:focus, textarea:focus, select:focus {
       outline: none;
       border-color: #8a6552;
-      background: #fffaf6;
+      box-shadow: 0 0 0 3px rgba(138, 101, 82, 0.1);
+      background: #fff;
     }
 
     textarea {
       resize: none;
-      height: 80px;
+      height: 100px;
+      line-height: 1.5;
+    }
+
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a6552' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 15px center;
+      background-size: 15px;
+      padding-right: 45px;
+    }
+
+    .shipping-method {
+      background: #f9f6f4;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 5px;
+    }
+
+    .shipping-method:hover {
+      background: #f5f0ed;
     }
 
     /* Submit Button */
-    button {
+    .proceed-btn {
       background: #8a6552;
-      color: #f9f7f5;
-      padding: 12px;
+      color: white;
       border: none;
+      padding: 16px 30px;
       border-radius: 8px;
       font-size: 16px;
       font-weight: 600;
       cursor: pointer;
-      transition: 0.3s;
+      transition: all 0.3s ease;
+      width: 100%;
+      margin-top: 10px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(138, 101, 82, 0.2);
     }
 
-    button:hover {
+    .proceed-btn:hover {
       background: #7a5a48;
-      transform: scale(1.03);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(138, 101, 82, 0.25);
+    }
+
+    .proceed-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(138, 101, 82, 0.2);
     }
 
     /* Footer */
     footer {
-      background: #8a6552;
-      color: #f9f7f5;
-      text-align: center;
-      padding: 18px;
-      margin-top: 40px;
-      font-size: 14px;
-      letter-spacing: 0.3px;
+      background-color: #f5f0eb;
+      display: flex;
+      justify-content: space-between;
+      padding: 40px 60px;
+      flex-wrap: wrap;
+      margin-top: 60px;
     }
 
-    a{
+    .footer-section {
+      max-width: 250px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 50px;
+    }
+
+    .footer-links div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-links a {
       text-decoration: none;
-      color: white;
+      color: #5d4037;
+      margin: 4px 0;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #8a6552;
+    }
+
+    .footer-section h3,
+    .footer-section p {
+      color: #5d4037;
+    }
+
+    .footer-links h4 {
+      color: #5d4037;
+    }
+
+    .socials {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .socials i {
+      font-size: 22px;
+      color: #5d4037;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 50%;
+      background-color: rgba(138, 101, 82, 0.1);
+    }
+
+    .socials i:hover {
+      color: #8a6552;
+      transform: scale(1.2);
+      text-shadow: 0px 0px 6px rgba(122, 91, 66, 0.5);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .navbar {
+        margin-top: 15px;
+        gap: 30px;
+        font-size: 20px;
+      }
+
+      .shipping-container {
+        padding: 20px;
+      }
+
+      footer {
+        padding: 30px 20px;
+      }
+
+      .footer-links {
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .footer-section {
+        text-align: center;
+        margin-bottom: 20px;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar {
+        gap: 15px;
+        font-size: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .icons {
+        margin-top: 15px;
+      }
+
+      .shipping-section {
+        padding: 20px;
+      }
+
+      input, select, textarea {
+        padding: 10px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
   </style>
 </head>
 <body>
 
   <!-- Navbar -->
-  <div class="links">
+  <header>
+    <div class="name"><b>Argenté</b></div>
+    <div class="navbar">
       <a href="index.html">Home</a>
-      <a href="collection.html">Shop</a>
-      <a href="collection.html">Collections</a>
-      <a href="index.html">About</a>
+      <a href="collection.html">Collection</a>
+      <a href="index.html#about-section">About</a>
       <a href="contact.html">Contact</a>
-  </div>
+    </div>
+    <div class="icons">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <a href="checkout.html"><i class="fa-solid fa-cart-shopping"></i></a>
+      <i class="fa-solid fa-user"></i>   
+    </div>
+  </header>
 
   <!-- Title -->
   <h1>Shipping Details</h1>
   <p>Please enter your delivery information below</p>
 
   <!-- Shipping Form -->
-  <div class="shipping-container">
-    <form action="PAYMENT PAGE.HTML" method="POST">
-      <label for="name">Full Name:</label>
-      <input type="text" id="name" name="name" required>
+  <main class="shipping-container">
+    <div class="shipping-section">
+      <h2>Shipping Details</h2>
+      <form action="payment.html" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="John" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+          </div>
+        </div>
 
-      <label for="address">Address:</label>
-      <textarea id="address" name="address" required></textarea>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="john@example.com" required>
+        </div>
 
-      <label for="city">City:</label>
-      <input type="text" id="city" name="city" required>
+        <div class="form-group">
+          <label for="address">Street Address</label>
+          <textarea id="address" name="address" placeholder="Enter your complete address" required></textarea>
+        </div>
 
-      <label for="pincode">Pincode:</label>
-      <input type="text" id="pincode" name="pincode" required>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" placeholder="Your city" required>
+          </div>
+          <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" id="state" name="state" placeholder="Your state" required>
+          </div>
+          <div class="form-group">
+            <label for="pincode">Pincode</label>
+            <input type="text" id="pincode" name="pincode" placeholder="000000" required>
+          </div>
+        </div>
 
-      <label for="contact">Contact Number:</label>
-      <input type="tel" id="contact" name="contact" required>
+        <div class="form-group">
+          <label for="contact">Contact Number</label>
+          <input type="tel" id="contact" name="contact" placeholder="+1 (XXX) XXX-XXXX" required>
+        </div>
 
-      <label for="method">Shipping Method:</label>
-      <select id="method" name="method">
-        <option>Standard (4-6 Days)</option>
-        <option>Express (2-3 Days)</option>
-        <option>Overnight Delivery</option>
-      </select>
+        <div class="form-group">
+          <label for="method">Shipping Method</label>
+          <div class="shipping-options">
+            <select id="method" name="method">
+              <option value="standard" class="shipping-method">Standard Delivery (4-6 Days) - FREE</option>
+              <option value="express" class="shipping-method">Express Delivery (2-3 Days) - $5.99</option>
+              <option value="overnight" class="shipping-method">Overnight Delivery (Next Day) - $12.99</option>
+            </select>
+          </div>
+        </div>
 
-      <button type="submit"><a href="payment.html">Proceed to Payment</a></button>
-    </form>
-  </div>
+        <button type="submit" class="proceed-btn">
+          Proceed to Payment <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+        </button>
+      </form>
+    </div>
+  </main>
 
   <!-- Footer -->
   <footer>
-    &copy; 2025 Shipping Gateway | All Rights Reserved
+    <div class="footer-section">
+      <h3>Argenté</h3>
+      <p>Crafting timeless pieces for your everyday elegance.</p>
+      <div class="socials">
+        <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h4>Shop</h4>
+        <a href="collection.html">All Products</a>
+        <a href="collection.html">New Arrivals</a>
+        <a href="collection.html">Gift Cards</a>
+        <a href="collection.html#sale">Sale</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="index.html#about-section">About Us</a>
+        <a href="index.html#about-section">Our Story</a>
+        <a href="index.html#about-section">Sustainability</a>
+        <a href="contact.html">Careers</a>
+      </div>
+      <div>
+        <h4>Customer Care</h4>
+        <a href="shipping.html">Shipping</a>
+        <a href="shipping.html">Returns</a>
+        <a href="index.html#about-section">Privacy Policy</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
   </footer>
 
 </body>

@@ -137,6 +137,15 @@ button:hover{
     .footer-links a:hover {
       color: #8a6552;
     }
+    
+    .footer-section h3,
+    .footer-section p {
+      color: #5d4037;
+    }
+
+    .footer-links h4 {
+      color: #5d4037;
+    }
 
     .socials {
       display: flex;
@@ -270,11 +279,41 @@ button:hover{
     header{
       flex-direction: column;
       line-height: 45px;
+      text-align: center;
+      padding: 20px;
     }
 
     .navbar{
-        gap: 10px;
+        gap: 20px;
         font-size: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .icons {
+        margin-top: 15px;
+    }
+
+    .mainbox {
+        width: 90%;
+        height: auto;
+        padding: 30px;
+    }
+
+    .footer {
+        padding: 30px 20px;
+    }
+
+    .footer-links {
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 20px;
+        width: 100%;
     }
 
     img{
@@ -282,7 +321,43 @@ button:hover{
     }
 
     #page1{
-        height: 250vh;
+        height: auto;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        gap: 15px;
+        font-size: 16px;
+    }
+
+    .navbar a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .icons {
+        gap: 15px;
+    }
+
+    .mainbox {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .greet {
+        font-size: 1.8rem;
+    }
+
+    .footer-links div {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    #page1 {
+        padding: 10px;
     }
 }
 
