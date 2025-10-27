@@ -38,6 +38,7 @@ header{
 .icons i{
     margin: 0px 10px 0px 10px;
     transition: 0.3s;
+    color: #8a6552;
 }
 
 .icons i:hover{
@@ -68,6 +69,15 @@ header{
 }
 
 .content1{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+
+.contents{
     display: flex;
     flex-wrap: wrap;
     padding: 40px;
@@ -151,11 +161,6 @@ header{
     transform: scale(1.1);
 }
 
-#ball{
-    background-color: #8a6552;
-    color: #f9f7f5;
-}
-
     /* Footer */
     footer {
         background-color: #f5f0eb;
@@ -180,25 +185,18 @@ header{
         flex-direction: column;
       }
   
-    .footer-links a {
-      text-decoration: none;
-      color: #5d4037;
-      margin: 4px 0;
-      transition: color 0.3s ease;
-    }
-
-    .footer-links a:hover {
-      color: #8a6552;
-    }
-    
-    .footer-section h3,
-    .footer-section p {
-      color: #5d4037;
-    }
-
-    .footer-links h4 {
-      color: #5d4037;
-    }      .socials {
+      .footer-links a {
+        text-decoration: none;
+        color: #5d4037;
+        margin: 4px 0;
+        transition: color 0.3s ease;
+      }
+  
+      .footer-links a:hover {
+        color: #8a6552;
+      }
+  
+      .socials {
         display: flex;
         gap: 15px;
         margin-top: 10px;
@@ -264,44 +262,25 @@ header{
     transform: scale(1.05);
 }
 
+.btn.active {
+  background-color: #8a6552;
+  color: white;
+}
+
 @media (max-width: 768px){
     header{
       flex-direction: column;
       line-height: 45px;
-      text-align: center;
-      padding: 20px;
     }
 
     .navbar{
-        gap: 20px;
+        gap: 10px;
         font-size: 18px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .icons {
-        margin-top: 15px;
     }
 
     .content1{
         flex-direction: column;
         padding: 20px;
-    }
-
-    .footer {
-        padding: 30px 20px;
-    }
-
-    .footer-links {
-        gap: 30px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .footer-section {
-        text-align: center;
-        margin-bottom: 20px;
-        width: 100%;
     }
 
     #imail{
@@ -310,38 +289,6 @@ header{
 
     .einput{
         flex-direction: column;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar {
-        gap: 15px;
-        font-size: 16px;
-    }
-
-    .navbar a {
-        width: 100%;
-        text-align: center;
-    }
-
-    .icons {
-        gap: 15px;
-    }
-
-    .footer-links div {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .content1 {
-        padding: 10px;
-    }
-
-    .pcard {
-        margin: 10px 0;
-    }
-}
     }
 
     .join{
