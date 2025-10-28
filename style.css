@@ -98,174 +98,198 @@ button:hover{
 }
 
 #page1{
-    height: 150vh;
+    height: 100vh;
     width: 100%;
     box-sizing: border-box;
     background-color: #f9f7f5;
 }
 
-    /* Footer */
-    footer {
-      background-color: #f5f0eb;
-      display: flex;
-      justify-content: space-between;
-      padding: 40px 60px;
-      flex-wrap: wrap;
-      margin-top: 60px;
-    }
+/* Hero Section */
+.hero {
+  background-color: #f5f0eb;
+  padding: 80px 60px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-    .footer-section {
-      max-width: 250px;
-    }
+.hero h1 {
+  font-size: 50px;
+  color: #5d4037;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
 
-    .footer-links {
-      display: flex;
-      gap: 50px;
-    }
+.hero p {
+  color: #8a6552;
+  font-size: 18px;
+  max-width: 750px;
+  margin: 0 auto;
+}
 
-    .footer-links div {
-      display: flex;
-      flex-direction: column;
-    }
+/* About Section */
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 60px;
+  gap: 60px;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-    .footer-links a {
-      text-decoration: none;
-      color: #5d4037;
-      margin: 4px 0;
-      transition: color 0.3s ease;
-    }
+.about-section img {
+  flex: 1;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-    .footer-links a:hover {
-      color: #8a6552;
-    }
+.about-content {
+  flex: 1;
+  max-width: 600px;
+}
 
-    .socials {
-      display: flex;
-      gap: 15px;
-      margin-top: 10px;
-    }
+.about-content h2 {
+  font-size: 32px;
+  color: #5d4037;
+  margin-bottom: 20px;
+}
 
-    .socials i {
-      font-size: 22px;
-      color: #5d4037;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
+.about-content p {
+  color: #8a6552;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
 
-    .socials i:hover {
-      color: #8a6552;
-      transform: scale(1.2);
-      text-shadow: 0px 0px 6px rgba(122, 91, 66, 0.5);
-    }
-    /* Hero Section */
-    .hero {
-      background-color: #f5f0eb;
-      padding: 80px 60px;
-      text-align: center;
-    }
+/* Mission & Vision */
+.mission-section {
+  background-color: #e8e0d8;
+  padding: 80px 60px;
+  text-align: center;
+}
 
-    .hero h1 {
-      font-size: 42px;
-      color: #5d4037;
-      margin-bottom: 20px;
-    }
+.mission-section h2 {
+  font-size: 36px;
+  color: #5d4037;
+  margin-bottom: 20px;
+}
 
-    .hero p {
-      color: #8a6552;
-      font-size: 18px;
-      max-width: 750px;
-      margin: 0 auto;
-    }
+.mission-section p {
+  color: #8a6552;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 18px;
+  line-height: 1.6;
+}
 
-    /* About Story */
-    .about-section {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 80px 60px;
-      gap: 60px;
-      flex-wrap: wrap;
-    }
+.mission-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
 
-    .about-section img {
-      flex: 1;
-      max-width: 500px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
+.card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  text-align: center;
+}
 
-    .about-content {
-      flex: 1;
-    }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
 
-    .about-content h2 {
-      font-size: 32px;
-      margin-bottom: 15px;
-      color: #5d4037;
-    }
+.card i {
+  font-size: 40px;
+  color: #8a6552;
+  margin-bottom: 20px;
+}
 
-    .about-content p {
-      color: #8a6552;
-      margin-bottom: 15px;
-    }
+.card h4 {
+  color: #5d4037;
+  margin-bottom: 12px;
+}
 
-    /* Mission & Vision */
-    .mission-section {
-      background-color: #e8e0d8;
-      padding: 80px 60px;
-      text-align: center;
-    }
+.card p {
+  color: #8a6552;
+  font-size: 16px;
+  line-height: 1.5;
+}
 
-    .mission-section h2 {
-      font-size: 30px;
-      color: #5d4037;
-      margin-bottom: 20px;
-    }
+/* Footer */
+footer {
+  background-color: #f5f0eb;
+  padding: 60px 60px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
 
-    .mission-section p {
-      color: #8a6552;
-      max-width: 700px;
-      margin: 0 auto 40px;
-    }
+.footer-section {
+  max-width: 250px;
+  margin-bottom: 30px;
+}
 
-    .mission-cards {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
+.footer-section h3 {
+  font-size: 28px;
+  color: #5d4037;
+  margin-bottom: 20px;
+}
 
-    .card {
-      background-color: #f9f7f5;
-      padding: 25px;
-      border-radius: 8px;
-      width: 280px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
-    }
+.footer-section p {
+  color: #8a6552;
+  margin-bottom: 20px;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
-    }
+.footer-links {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
 
-    .card i {
-      font-size: 28px;
-      color: #8a6552;
-      margin-bottom: 10px;
-    }
+.footer-links div {
+  display: flex;
+  flex-direction: column;
+}
 
-    .card h4 {
-      color: #5d4037;
-      margin-bottom: 8px;
-    }
+.footer-links a {
+  text-decoration: none;
+  color: #5d4037;
+  margin: 5px 0;
+  transition: color 0.3s ease;
+  font-size: 16px;
+}
 
-    .card p {
-      color: #8a6552;
-      font-size: 15px;
-    }
+.footer-links a:hover {
+  color: #8a6552;
+}
 
+.socials {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
 
+.socials i {
+  font-size: 24px;
+  color: #5d4037;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.socials i:hover {
+  color: #8a6552;
+  transform: scale(1.2);
+  text-shadow: 0px 0px 6px rgba(122, 91, 66, 0.5);
+}
     
 @media (max-width: 768px){
     header{
@@ -283,6 +307,6 @@ button:hover{
     }
 
     #page1{
-        height: 250vh;
+        height: 400vh;
     }
 }
